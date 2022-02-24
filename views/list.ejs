@@ -1,0 +1,11 @@
+<h2><%= students %></h2>
+<br />
+
+<% if (siswa.length < 1) { %>
+<p>Not Found 404</p>
+<% } %> <% siswa.forEach(siswa => { %>
+<ul>
+  <li>Name : <%= siswa.nama %></li>
+  <li>From : <%= siswa.asal %></li>
+</ul>
+<% }) %>
