@@ -1,5 +1,4 @@
 const express = require("express");
-const expressLayouts = require("express-ejs-layouts");
 const morgan = require("morgan");
 const app = express();
 const port = 3000;
@@ -8,7 +7,6 @@ const port = 3000;
 app.set("view engine", "ejs");
 
 // third party middleware
-app.use(expressLayouts);
 app.use(morgan("dev"));
 
 // build in middleware
@@ -22,14 +20,12 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res) => {
   res.render("index", {
-    layout: "layouts/main-layout",
     title: "Home Page",
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    layout: "layouts/main-layout",
     title: "About Page",
   });
 });
@@ -50,7 +46,6 @@ app.get("/list", (req, res) => {
     },
   ];
   res.render("list", {
-    layout: "layouts/main-layout",
     title: "List Page",
     students: "Students at Eduwork",
     siswa: siswa,
